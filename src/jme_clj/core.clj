@@ -164,6 +164,7 @@
                             frequency
                             fullscreen?
                             height
+                            no-audio?
                             resizable?
                             title
                             vsync?
@@ -178,6 +179,7 @@
     (some->> vsync? (.setVSync settings))
     (some->> title (.setTitle settings))
     (some->> width (.setWidth settings))
+    (when no-audio? (.setAudioRenderer settings nil))
     settings))
 
 
@@ -1324,6 +1326,7 @@
                                     (destroy#))
                                   (proxy-super destroy)))]
                      (when (seq ~opts)
+                       
                        (some->> ~opts :show-settings? (.setShowSettings app#))
                        (some->> ~opts :pause-on-lost-focus? (.setPauseOnLostFocus app#))
                        (some->> ~opts :display-fps? (.setDisplayFps app#))

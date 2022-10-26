@@ -1,6 +1,6 @@
 (def jme-version "3.3.2-stable")
 
-(defproject jme-clj "0.1.13"
+(defproject jme-clj "0.1.13-fx"
 
   :codox {:metadata    {:doc        "**TODO**: write docs"
                         :doc/format :markdown}
